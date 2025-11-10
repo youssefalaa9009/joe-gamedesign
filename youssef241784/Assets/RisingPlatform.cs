@@ -16,16 +16,19 @@ public class RisingPlatform : MonoBehaviour
     // Start is called before the first frame update
     void Start()
     {
-        
     }
 
     // Update is called once per frame
     void Update()
     {
         if (AtoB == true)
-        { targetPosition = PointA.position;
-        
-        } else { targetPosition = PointB.position;}
+        { 
+            targetPosition = PointA.position;
+        } 
+        else 
+        { 
+            targetPosition = PointB.position;
+        }
 
         Vector3 newPosition = transform.position;
         newPosition.y = Mathf.MoveTowards(transform.position.y, targetPosition.y, speed * Time.deltaTime);
@@ -35,5 +38,15 @@ public class RisingPlatform : MonoBehaviour
             AtoB = !AtoB;
         }
     
+    }
+    void OnCollisionEnter2D(Collision2D collision){
+        if (collision.gameObject.tag =="Player"){
+            collision.transform.SetParent(transform);
+        }
+    }
+    void OnCollisionExit2D(Collision2D collision){
+        if (collision.gameObject.tag =="Player"){
+            collision.transform.SetParent(null);
+        }
     }
 }
