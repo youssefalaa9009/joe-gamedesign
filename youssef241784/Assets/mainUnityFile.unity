@@ -6018,6 +6018,11 @@ PrefabInstance:
       objectReference: {fileID: 0}
     m_RemovedComponents: []
   m_SourcePrefab: {fileID: 100100000, guid: 30debc53dc9103041b3fb9a91a871be7, type: 3}
+--- !u!4 &389581665 stripped
+Transform:
+  m_CorrespondingSourceObject: {fileID: 5289940683249766676, guid: 30debc53dc9103041b3fb9a91a871be7, type: 3}
+  m_PrefabInstance: {fileID: 389581663}
+  m_PrefabAsset: {fileID: 0}
 --- !u!1 &405803568
 GameObject:
   m_ObjectHideFlags: 0
@@ -8318,6 +8323,69 @@ BoxCollider2D:
   serializedVersion: 2
   m_Size: {x: 0.48, y: 0.05}
   m_EdgeRadius: 0
+--- !u!1 &1029512683
+GameObject:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  serializedVersion: 6
+  m_Component:
+  - component: {fileID: 1029512684}
+  - component: {fileID: 1029512685}
+  - component: {fileID: 1029512686}
+  m_Layer: 0
+  m_Name: GhostSpawnpoint
+  m_TagString: Untagged
+  m_Icon: {fileID: 6519382022992737161, guid: 0000000000000000d000000000000000, type: 0}
+  m_NavMeshLayer: 0
+  m_StaticEditorFlags: 0
+  m_IsActive: 1
+--- !u!4 &1029512684
+Transform:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 1029512683}
+  m_LocalRotation: {x: -0, y: -0, z: -0, w: 1}
+  m_LocalPosition: {x: 2.3, y: 0.158, z: 0}
+  m_LocalScale: {x: 2.6817899, y: 2.5365267, z: 0.89393}
+  m_ConstrainProportionsScale: 0
+  m_Children: []
+  m_Father: {fileID: 389581665}
+  m_RootOrder: 1
+  m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
+--- !u!114 &1029512685
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 1029512683}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: ad08047966f081544be184f5ac933c13, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  enemy: {fileID: 3619365531101310345, guid: ffe3599b1d8556f4891923465e483b10, type: 3}
+  spawnPoint: {fileID: 1029512684}
+--- !u!58 &1029512686
+CircleCollider2D:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 1029512683}
+  m_Enabled: 1
+  m_Density: 1
+  m_Material: {fileID: 0}
+  m_IsTrigger: 1
+  m_UsedByEffector: 0
+  m_UsedByComposite: 0
+  m_Offset: {x: 0, y: 0}
+  serializedVersion: 2
+  m_Radius: 0.5
 --- !u!1 &1085553354
 GameObject:
   m_ObjectHideFlags: 0
@@ -11488,6 +11556,7 @@ GameObject:
   - component: {fileID: 1797978377}
   - component: {fileID: 1797978381}
   - component: {fileID: 1797978382}
+  - component: {fileID: 1797978383}
   m_Layer: 0
   m_Name: Player_0
   m_TagString: Player
@@ -11602,7 +11671,7 @@ Transform:
   m_PrefabAsset: {fileID: 0}
   m_GameObject: {fileID: 1797978376}
   m_LocalRotation: {x: 0, y: 0, z: 0, w: 1}
-  m_LocalPosition: {x: -8.3, y: 1.46, z: 0}
+  m_LocalPosition: {x: 12.38, y: 6.5, z: 0}
   m_LocalScale: {x: 9.59226, y: 9.836666, z: 1}
   m_ConstrainProportionsScale: 0
   m_Children:
@@ -11652,6 +11721,23 @@ Animator:
   m_HasTransformHierarchy: 1
   m_AllowConstantClipSamplingOptimization: 1
   m_KeepAnimatorControllerStateOnDisable: 0
+--- !u!114 &1797978383
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 1797978376}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 66b231f6822c1fa4a97e059114c9657b, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  health: 3
+  lives: 3
+  flickerDuration: 0.1
+  isImmune: 0
+  immunityDuration: 1.5
 --- !u!1 &1810128410
 GameObject:
   m_ObjectHideFlags: 0
@@ -11663,9 +11749,9 @@ GameObject:
   - component: {fileID: 1810128413}
   - component: {fileID: 1810128412}
   - component: {fileID: 1810128411}
-  m_Layer: 3
+  m_Layer: 0
   m_Name: Terrain Sliced (16x16)_4 (3)
-  m_TagString: Untagged
+  m_TagString: Wall
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
   m_StaticEditorFlags: 0
